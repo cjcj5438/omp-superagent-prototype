@@ -25,7 +25,7 @@ GitHub / 飞书
                  回复原线程 (ack + 结果)
 ```
 
-- **仓库布局**：`src/` 守护进程与面板源码，`plugin/` 注入 omp 子进程的扩展，`prompts/` 会话提示词，`skills/` 会话技能，`tests/` 52 个测试文件，`docs/` 000–008 设计文档。
+- **仓库布局**：`src/` 守护进程与面板源码，`plugin/` 注入 omp 子进程的扩展，`prompts/` 会话提示词，`skills/` 会话技能，`tests/` 51 个测试文件（另有 `fixtures/` 目录），`docs/` 000–008 设计文档。
 - **构建产物**：`dist/daemon.js`（守护进程，unix socket 上提供 HTTP API）、`dist/panel.js` + `dist/panel.d.ts`（可嵌入的管理面板，React 19）。
 - **状态**：单个 SQLite（`S/superagent.sqlite`）+ 会话 JSONL + 工单目录，全部在 state 目录 `S` 下；staging 用 `proper-lockfile` 保证单实例。
 
@@ -37,7 +37,7 @@ GitHub / 飞书
 npm install
 npm run build        # dist/daemon.js + dist/panel.js
 npm run typecheck
-npm test             # 52 文件，约 1100 用例
+npm test             # 51 文件，约 1100 用例
 ```
 
 宿主启动守护进程（以 omp-resume 为例，实际参数见 `docs/006-deployment.md`）：
